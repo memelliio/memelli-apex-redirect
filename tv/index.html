@@ -1,33 +1,20 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Memelli TV — Install</title>
-  <style>
-    body { margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0e; color: #fff; display: flex; min-height: 100vh; align-items: center; justify-content: center; }
-    .card { max-width: 560px; padding: 40px; }
-    h1 { font-size: 1.6rem; margin: 0 0 8px; }
-    .sub { color: #9aa; margin: 0 0 28px; }
-    ol { line-height: 2; font-size: 1.05rem; padding-left: 22px; }
-    b { color: #7fd4ff; }
-    .btn { display: inline-block; margin-top: 24px; background: #7fd4ff; color: #001; font-weight: 700; padding: 14px 26px; border-radius: 10px; text-decoration: none; }
-    .fine { color: #667; font-size: .85rem; margin-top: 26px; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h1>Memelli TV</h1>
-    <p class="sub">Your Memelli account, on your television.</p>
-    <ol>
-      <li>On your Fire TV or Android TV, install the free <b>Downloader</b> app from the TV's app store.</li>
-      <li>Open Downloader and enter: <b>memelli.io/apk</b></li>
-      <li>When the TV asks, allow the install, then press <b>Install</b>.</li>
-      <li>Open <b>Memelli TV</b> from your home screen and sign in with your Memelli login.</li>
-    </ol>
-    <a class="btn" href="/apk/MemelliTV.apk">Download Memelli TV (APK)</a>
-    <p class="fine">Memelli IO Inc — install on your own device. Your login stays yours.</p>
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Memelli IO TV</title>
+    <!--
+      MEASURED 2026-09-06: this page carried no redirect target at all - it 301'd to /tv/ on the apex
+      and stopped there. IO TV is a real service (4 API routes: catalog, guide, hls, logo) reached
+      through the Terminal, so the apex now sends a person to the surface that can open it.
+    -->
+    <meta http-equiv="refresh" content="0;url=https://www.memelli.io/apps/infinity-terminal">
+    <script>
+      window.location.replace('https://www.memelli.io/apps/infinity-terminal' + window.location.search + window.location.hash)
+    </script>
+  </head>
+  <body style="font-family:system-ui;background:#f4f6fb;color:#0a0a0e;padding:2rem">
+    <p>Opening Memelli IO TV… <a style="color:#c41e3a" href="https://www.memelli.io/apps/infinity-terminal">Continue</a></p>
+  </body>
 </html>
