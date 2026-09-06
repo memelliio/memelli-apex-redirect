@@ -1,3 +1,61 @@
 <!doctype html>
-<meta http-equiv="refresh" content="0;url=/apk/MemelliTV.apk">
-<title>Memelli TV</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Get Memelli</title>
+<!--
+  MEASURED 2026-09-06: this path served ONLY <meta http-equiv="refresh" url=/apk/MemelliTV.apk>.
+  There was no page - opening it force-downloaded a file and showed nothing. On iOS and on desktop
+  that download is useless, and the installed web app (the one he actually uses) was never offered.
+
+  So this is a real page: the native app first, because it works on every device, and the Android
+  package second for people who want it.
+
+  Colours are his: #f4f6fb surface, #ff4d63 accent, #000 ink - the same values on
+  runtime.design.system.current that the manifest now reads.
+-->
+<style>
+  :root { color-scheme: light }
+  * { box-sizing: border-box }
+  body { margin:0; font-family: system-ui,-apple-system,"Segoe UI",sans-serif; background:#f4f6fb; color:#0a0a0e;
+         display:flex; align-items:center; justify-content:center; min-height:100vh; padding:1.5rem }
+  .card { width:100%; max-width:34rem }
+  h1 { font-size:1.65rem; margin:0 0 .35rem; letter-spacing:-.02em }
+  p  { margin:.35rem 0 1.25rem; color:#4a5163; line-height:1.5 }
+  .row { background:#fff; border:1px solid #e3e7f0; border-radius:14px; padding:1.15rem 1.25rem; margin-bottom:.85rem }
+  .row h2 { font-size:1rem; margin:0 0 .3rem }
+  .row p { margin:0 0 .85rem; font-size:.92rem }
+  a.btn { display:inline-block; background:#ff4d63; color:#fff; text-decoration:none; font-weight:600;
+          padding:.7rem 1.15rem; border-radius:10px; font-size:.95rem }
+  a.btn.ghost { background:#fff; color:#0a0a0e; border:1px solid #d7dce8 }
+  ol { margin:.5rem 0 0; padding-left:1.1rem; color:#4a5163; font-size:.9rem; line-height:1.7 }
+  .small { font-size:.8rem; color:#7b8296; margin-top:1rem }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Get Memelli</h1>
+    <p>Your clients, your credit, your funding and your store — in one place.</p>
+
+    <div class="row">
+      <h2>Install the app</h2>
+      <p>Works on iPhone, Android, Mac and Windows. No store, no download.</p>
+      <a class="btn" href="https://www.memelli.io/?native=1">Open Memelli</a>
+      <ol>
+        <li><b>iPhone / iPad:</b> open in Safari, tap Share, then <b>Add to Home Screen</b>.</li>
+        <li><b>Android:</b> open in Chrome, tap the menu, then <b>Install app</b>.</li>
+        <li><b>Desktop:</b> open in Chrome or Edge and click the install icon in the address bar.</li>
+      </ol>
+    </div>
+
+    <div class="row">
+      <h2>Android package</h2>
+      <p>Direct APK for Android devices that install outside the Play Store.</p>
+      <a class="btn ghost" href="/apk/MemelliTV.apk" download>Download the APK</a>
+    </div>
+
+    <p class="small">memelli.io — Memelli IO Inc</p>
+  </div>
+</body>
+</html>
