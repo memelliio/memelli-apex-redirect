@@ -1,9 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="background:#f4f6fb;color-scheme:light">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#f4f6fb">
     <title>Memelli</title>
+    <!--
+      MEASURED 2026-09-06: this shim was an EMPTY body with no background and a
+      window.location.replace in <head>. The browser paints a bare unstyled document while it waits
+      for JS to run, and behind a 10-minute Fastly cache that bare paint is what a person sees
+      first - black on any device whose default is dark.
+
+      So the redirect happens BEFORE paint now: <meta http-equiv="refresh"> is honoured by the
+      parser without waiting for script, the JS replace stays as the faster path for browsers that
+      run it, and <html> carries the surface colour so any frame that does render is his white
+      rather than a default.
+
+      Colours are the palette row's: #f4f6fb surface, #ff4d63 accent.
+    -->
+    <meta http-equiv="refresh" content="0;url=https://www.memelli.io/">
     <script>
       window.location.replace(
         "https://www.memelli.io" +
@@ -12,6 +28,12 @@
           window.location.hash
       );
     </script>
+    <style>
+      html,body{background:#f4f6fb;margin:0;height:100%}
+      body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#0a0a0e;
+           display:flex;align-items:center;justify-content:center}
+      a{color:#ff4d63;text-decoration:none;font-weight:600}
+    </style>
   </head>
   <body>
     <a href="https://www.memelli.io">Continue to Memelli</a>
