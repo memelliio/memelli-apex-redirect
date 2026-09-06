@@ -1,5 +1,27 @@
 <!doctype html>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="0;url=https://www.memelli.io/auth/split/sign-in">
-<title>Memelli Sign In</title>
-<p style="font-family:system-ui;background:#0a0a0e;color:#fff;padding:2rem">Opening Memelli sign in… <a style="color:#7fd4ff" href="https://www.memelli.io/auth/split/sign-in">tap here</a>.</p>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Memelli Sign In</title>
+    <!--
+      MEASURED 2026-09-06: this page pointed at https://www.memelli.io/auth/split/sign-in, and that
+      URL returns 404. So every person who opened memelli.io/signin landed on a not-found page.
+
+      The app has no /auth route by design - src/middleware.ts:15 states it: "THE STORE IS THE SITE -
+      the old dashboard doors are deleted... Nothing is gated by route anymore; auth opens as a wall
+      window and the APIs enforce real sessions." Verified live: /auth 404, /auth/split/sign-in 404,
+      /signin 404 - while / returns 200.
+
+      So the apex sends a person to the home surface and asks it to open the auth window, rather than
+      to a route that was deleted on purpose.
+    -->
+    <meta http-equiv="refresh" content="0;url=https://www.memelli.io/?auth=signin">
+    <script>
+      window.location.replace('https://www.memelli.io/?auth=signin' + window.location.search + window.location.hash)
+    </script>
+  </head>
+  <body style="font-family:system-ui;background:#f4f6fb;color:#0a0a0e;padding:2rem">
+    <p>Opening Memelli sign in… <a style="color:#c41e3a" href="https://www.memelli.io/?auth=signin">Continue</a></p>
+  </body>
+</html>
